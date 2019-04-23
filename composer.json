@@ -1,0 +1,19 @@
+{
+    "name": "kcs/studentai",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tautvydas",
+            "email": "tautvydas@dulskis.eu"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "1.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KCS\\": "src\\"
+        }
+    }
+}

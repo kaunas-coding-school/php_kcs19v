@@ -1,5 +1,7 @@
 <?php
 
+namespace KCS\Model;
+
 class Grupe
 {
     /** @var string */
