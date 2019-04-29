@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 require __DIR__."/vendor/autoload.php";
 
 $log = new Monolog\Logger('name');
@@ -66,7 +68,12 @@ try {
     echo "Moterys:<br>";
     spausdintiDuomenis($moterys);
     echo "<hr>";
-    throw new \Exception('Nauja klaida');
+
+
+    $stud = (new \KCS\Repository\StudentasRepository())->getAllStudents();
+    foreach ($stud as $item) {
+        echo $item['vardas']."<br>";
+    }
 } catch (\Exception $e){
     $log->addWarning($e->getMessage());
 }
