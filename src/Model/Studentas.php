@@ -30,10 +30,10 @@ class Studentas
     }
 
     /**
-     * @param string $id
+     * @param int $id
      * @return Studentas
      */
-    public function setId(string $id): Studentas
+    public function setId(int $id): Studentas
     {
         $this->id = $id;
         return $this;
@@ -109,5 +109,10 @@ class Studentas
     {
         $this->grupe = $grupe;
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getVardas() . " " . $this->getPavarde();
     }
 }

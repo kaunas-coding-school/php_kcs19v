@@ -26,8 +26,20 @@ class StudentasRepository
 
     public function importStudents(array $duomenys): void
     {
+        $affected_rows = 0;
         foreach ($duomenys as $studentas) {
-            //...
+            $stmt = $this->manager->prepare(
+                "INSERT INTO studentas(`vardas`,`pavarde`,`asmens_kodas`,`grupe`) 
+                      VALUES(:vardas,:pavarde,:asmens_kodas,:grupe)"
+            );
+            $stmt->execute([
+                ':vardas' => $studentas['vardas'],
+                ':pavarde' => $studentas['pavarde'],
+                ':asmens_kodas' => $studentas['ak'],
+                ':grupe' => $studentas['grupe']
+                ]);
+            $affected_rows += $stmt->rowCount();
         }
+        echo "Rows inserted: ".$affected_rows;
     }
 }
