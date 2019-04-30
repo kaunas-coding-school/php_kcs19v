@@ -20,22 +20,22 @@ class DataBaseManager
         return $this->con;
     }
 
-    private function getDbName()
+    private function getDbName(): string
     {
         return 'kcs19v';
     }
 
-    private function getDbUserName()
+    private function getDbUserName(): string
     {
         return 'root';
     }
 
-    private function getDbPass()
+    private function getDbPass(): string
     {
         return '';
     }
 
-    public function getConection()
+    public function getConection(): \PDO
     {
         return $this->con;
     }

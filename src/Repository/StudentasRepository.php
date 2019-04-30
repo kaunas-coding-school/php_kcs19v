@@ -23,4 +23,11 @@ class StudentasRepository
 
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+
+    public function importStudents(array $duomenys): void
+    {
+        foreach ($duomenys as $studentas) {
+            //...
+        }
+    }
 }
